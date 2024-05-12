@@ -9,6 +9,10 @@ specifiers:
   '@types/node': ^18.16.17
   '@types/uuid': ^9.0.2
   '@vitejs/plugin-vue': ^4.2.3
+  '@vue-flow/background': ^1.3.0
+  '@vue-flow/controls': ^1.1.1
+  '@vue-flow/core': ^1.33.6
+  '@vue-flow/minimap': ^1.4.0
   '@vue/eslint-config-prettier': ^7.1.0
   '@vue/eslint-config-typescript': ^11.0.3
   '@vue/tsconfig': ^0.4.0
@@ -32,6 +36,10 @@ specifiers:
 
 dependencies:
   '@popperjs/core': 2.11.8
+  '@vue-flow/background': 1.3.0_3lduqttqh5h2nrelpqyhnn57pq
+  '@vue-flow/controls': 1.1.1_3lduqttqh5h2nrelpqyhnn57pq
+  '@vue-flow/core': 1.33.6_vue@3.4.15
+  '@vue-flow/minimap': 1.4.0_3lduqttqh5h2nrelpqyhnn57pq
   '@vueuse/integrations': 10.7.2_vue@3.4.15
   bootstrap: 5.3.2_@popperjs+core@2.11.8
   bootstrap-icons: 1.11.3
@@ -578,6 +586,52 @@ packages:
       path-browserify: 1.0.1
     dev: true
 
+  /@vue-flow/background/1.3.0_3lduqttqh5h2nrelpqyhnn57pq:
+    resolution: {integrity: sha512-fu/8s9wzSOQIitnSTI10XT3bzTtagh4h8EF2SWwtlDklOZjAaKy75lqv4htHa3wigy/r4LGCOGwLw3Pk88/AxA==}
+    peerDependencies:
+      '@vue-flow/core': ^1.23.0
+      vue: ^3.3.0
+    dependencies:
+      '@vue-flow/core': 1.33.6_vue@3.4.15
+      vue: 3.4.15_typescript@5.0.4
+    dev: false
+
+  /@vue-flow/controls/1.1.1_3lduqttqh5h2nrelpqyhnn57pq:
+    resolution: {integrity: sha512-TCoRD5aYZQsM/N7QlPJcIILg1Gxm0O/zoUikxaeadcom1OlKFHutY72agsySJEWM6fTlyb7w8DYCbB4T8YbFoQ==}
+    peerDependencies:
+      '@vue-flow/core': ^1.23.0
+      vue: ^3.3.0
+    dependencies:
+      '@vue-flow/core': 1.33.6_vue@3.4.15
+      vue: 3.4.15_typescript@5.0.4
+    dev: false
+
+  /@vue-flow/core/1.33.6_vue@3.4.15:
+    resolution: {integrity: sha512-AfDXA5aTKxNjTeSP2zn1uox5vUCTOO8ZMllWMsPE7T7FJD7iHwLoLyxhjNMDRTaRAOPu4MohZaNr4wuEm6c6Qg==}
+    peerDependencies:
+      vue: ^3.3.0
+    dependencies:
+      '@vueuse/core': 10.7.2_vue@3.4.15
+      d3-drag: 3.0.0
+      d3-selection: 3.0.0
+      d3-zoom: 3.0.0
+      vue: 3.4.15_typescript@5.0.4
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+    dev: false
+
+  /@vue-flow/minimap/1.4.0_3lduqttqh5h2nrelpqyhnn57pq:
+    resolution: {integrity: sha512-GetmN8uOQxIx4ja85VDnIwpZO5SnGIOfYSqUw8MRMbc8CdACun2M2e3FRaMZRaWapclU2ssXms4xHMWrA3YWpw==}
+    peerDependencies:
+      '@vue-flow/core': ^1.23.0
+      vue: ^3.3.0
+    dependencies:
+      '@vue-flow/core': 1.33.6_vue@3.4.15
+      d3-selection: 3.0.0
+      d3-zoom: 3.0.0
+      vue: 3.4.15_typescript@5.0.4
+    dev: false
+
   /@vue/compiler-core/3.4.15:
     resolution: {integrity: sha512-XcJQVOaxTKCnth1vCxEChteGuwG6wqnUHxAm1DO3gCz0+uXKaJNx8/digSz4dLALCy8n2lKq24jSUs8segoqIw==}
     dependencies:
@@ -1012,6 +1066,71 @@ packages:
 
   /csstype/3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+
+  /d3-color/3.1.0:
+    resolution: {integrity: sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /d3-dispatch/3.0.1:
+    resolution: {integrity: sha512-rzUyPU/S7rwUflMyLc1ETDeBj0NRuHKKAcvukozwhshr6g6c5d8zh4c2gQjY2bZ0dXeGLWc1PF174P2tVvKhfg==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /d3-drag/3.0.0:
+    resolution: {integrity: sha512-pWbUJLdETVA8lQNJecMxoXfH6x+mO2UQo8rSmZ+QqxcbyA3hfeprFgIT//HW2nlHChWeIIMwS2Fq+gEARkhTkg==}
+    engines: {node: '>=12'}
+    dependencies:
+      d3-dispatch: 3.0.1
+      d3-selection: 3.0.0
+    dev: false
+
+  /d3-ease/3.0.1:
+    resolution: {integrity: sha512-wR/XK3D3XcLIZwpbvQwQ5fK+8Ykds1ip7A2Txe0yxncXSdq1L9skcG7blcedkOX+ZcgxGAmLX1FrRGbADwzi0w==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /d3-interpolate/3.0.1:
+    resolution: {integrity: sha512-3bYs1rOD33uo8aqJfKP3JWPAibgw8Zm2+L9vBKEHJ2Rg+viTR7o5Mmv5mZcieN+FRYaAOWX5SJATX6k1PWz72g==}
+    engines: {node: '>=12'}
+    dependencies:
+      d3-color: 3.1.0
+    dev: false
+
+  /d3-selection/3.0.0:
+    resolution: {integrity: sha512-fmTRWbNMmsmWq6xJV8D19U/gw/bwrHfNXxrIN+HfZgnzqTHp9jOmKMhsTUjXOJnZOdZY9Q28y4yebKzqDKlxlQ==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /d3-timer/3.0.1:
+    resolution: {integrity: sha512-ndfJ/JxxMd3nw31uyKoY2naivF+r29V+Lc0svZxe1JvvIRmi8hUsrMvdOwgS1o6uBHmiz91geQ0ylPP0aj1VUA==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /d3-transition/3.0.1_d3-selection@3.0.0:
+    resolution: {integrity: sha512-ApKvfjsSR6tg06xrL434C0WydLr7JewBB3V+/39RMHsaXTOG0zmt/OAXeng5M5LBm0ojmxJrpomQVZ1aPvBL4w==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      d3-selection: 2 - 3
+    dependencies:
+      d3-color: 3.1.0
+      d3-dispatch: 3.0.1
+      d3-ease: 3.0.1
+      d3-interpolate: 3.0.1
+      d3-selection: 3.0.0
+      d3-timer: 3.0.1
+    dev: false
+
+  /d3-zoom/3.0.0:
+    resolution: {integrity: sha512-b8AmV3kfQaqWAuacbPuNbL6vahnOJflOhexLzMMNLga62+/nh0JzvJ0aO/5a5MVgUFGS7Hu1P9P03o3fJkDCyw==}
+    engines: {node: '>=12'}
+    dependencies:
+      d3-dispatch: 3.0.1
+      d3-drag: 3.0.0
+      d3-interpolate: 3.0.1
+      d3-selection: 3.0.0
+      d3-transition: 3.0.1_d3-selection@3.0.0
+    dev: false
 
   /de-indent/1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}

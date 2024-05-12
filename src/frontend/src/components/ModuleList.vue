@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import {useModuleStore} from "@/stores/modules";
+import {useElementStore} from "@/stores/elements";
 import {ref, watch} from "vue";
+import {ModuleEntry} from "@/types";
 
 const moduleStore = useModuleStore()
+const elementStore = useElementStore()
 
 const query = ref('')
 watch(query, value => {
@@ -10,11 +13,11 @@ watch(query, value => {
 })
 
 
-function switchEntry(entry: string) {
-  fetch(`http://localhost:8000/api/modules/deps?id=${entry}&hash=${moduleStore.uuid}`).then(resp => resp.json()).then(resp => {
+function switchEntry(root: ModuleEntry) {
+  fetch(`http://localhost:8000/api/modules/deps?id=${root.id}&hash=${moduleStore.uuid}`).then(resp => resp.json()).then(resp => {
     const {code, data, message} = resp
     if (code === 0) {
-
+      elementStore.init(root, data)
     } else {
       alert(message)
     }
@@ -33,10 +36,11 @@ function switchEntry(entry: string) {
         <div v-else>
           <input v-model="query" class="w-100 mb-2" type="search" placeholder="搜索">
           <ul>
-            <li v-for="(module, index) in moduleStore.modules" :key="module.id" @click="switchEntry(module.id)">
-              <p class="mb-0">
+            <li v-for="(module, index) in moduleStore.modules" :key="module.id" @click="switchEntry(module)">
+              <p class="mb-0 d-flex">
                 <span>#{{ index + 1 }}. </span>
-                <span class="text-primary">{{ module.id }}</span>
+                <span class="text-primary flex-grow-1">{{ module.id }}</span>
+                <span class="text-secondary" v-if="module.isLeaf">(leaf)</span>
               </p>
 
               <p class="mb-0" v-for="(comment, idx) in module.comments" :key="idx">{{ comment }}</p>

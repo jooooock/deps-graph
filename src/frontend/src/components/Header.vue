@@ -10,6 +10,8 @@ const moduleStore = useModuleStore()
 function onFileChange(e: any) {
   const files: FileList = e.target.files || e.dataTransfer.files
   file.value = files[0]
+
+  setTimeout(startParse, 0)
 }
 
 let loading = ref(false)
