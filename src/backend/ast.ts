@@ -5,7 +5,7 @@ import jscodeshift, {
     FunctionExpression,
     Node,
     ObjectProperty
-} from "jscodeshift"
+} from "npm:jscodeshift"
 const j = jscodeshift.withParser('babylon')
 
 
