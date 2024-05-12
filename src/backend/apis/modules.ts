@@ -1,6 +1,5 @@
 import {type ModuleEntry, parseModules, findDeps} from "../ast.ts";
 import {computeHash, jsonResponse, readReqBody} from "../utils/index.ts";
-import {Omit} from "ast-types/types";
 
 const _cache: Record<string, Record<string, ModuleEntry>> = {}
 
