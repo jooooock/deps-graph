@@ -32,9 +32,9 @@ function switchEntry(root: ModuleEntry) {
       <div class="wrapper">
         <h5 class="text-center py-2 mb-0 pt-3">模块列表</h5>
         <hr class="my-2">
+        <input v-model="query" class="w-100 mb-2" type="search" placeholder="搜索">
         <p class="px-3 text-danger" v-if="moduleStore.modules.length === 0">请先选择 js 文件并进行解析</p>
         <div v-else>
-          <input v-model="query" class="w-100 mb-2" type="search" placeholder="搜索">
           <ul>
             <li v-for="(module, index) in moduleStore.modules" :key="module.id" @click="switchEntry(module)">
               <p class="mb-0 d-flex">

@@ -6,12 +6,12 @@ import { MiniMap } from '@vue-flow/minimap'
 import { Controls } from '@vue-flow/controls'
 import {useModuleStore} from "@/stores/modules"
 import {ref} from "vue"
-import {useElementStore} from "@/stores/elements";
+import {useElementStore} from "@/stores/elements"
+import DepNode from "@/components/DepNode.vue"
 
 import '@vue-flow/minimap/dist/style.css'
 import '@vue-flow/controls/dist/style.css'
 
-const moduleStore = useModuleStore()
 const elementStore = useElementStore()
 
 const elements = ref<Elements>([
@@ -71,10 +71,14 @@ const elements = ref<Elements>([
   <div class="flex-grow-1 p-3">
     <div class="card w-100 h-100">
       <h5 class="card-header">依赖图</h5>
-      <VueFlow :nodes="elementStore.nodes" :edges="elementStore.edges">
+      <VueFlow fit-view-on-init :nodes="elementStore.nodes" :edges="elementStore.edges">
         <Background />
         <MiniMap />
         <Controls />
+
+        <template #node-custom="props">
+          <DepNode v-bind="props" />
+        </template>
       </VueFlow>
     </div>
   </div>

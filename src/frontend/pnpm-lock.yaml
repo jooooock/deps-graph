@@ -13,6 +13,7 @@ specifiers:
   '@vue-flow/controls': ^1.1.1
   '@vue-flow/core': ^1.33.6
   '@vue-flow/minimap': ^1.4.0
+  '@vue-flow/node-toolbar': ^1.1.0
   '@vue/eslint-config-prettier': ^7.1.0
   '@vue/eslint-config-typescript': ^11.0.3
   '@vue/tsconfig': ^0.4.0
@@ -40,6 +41,7 @@ dependencies:
   '@vue-flow/controls': 1.1.1_3lduqttqh5h2nrelpqyhnn57pq
   '@vue-flow/core': 1.33.6_vue@3.4.15
   '@vue-flow/minimap': 1.4.0_3lduqttqh5h2nrelpqyhnn57pq
+  '@vue-flow/node-toolbar': 1.1.0_@vue-flow+core@1.33.6
   '@vueuse/integrations': 10.7.2_vue@3.4.15
   bootstrap: 5.3.2_@popperjs+core@2.11.8
   bootstrap-icons: 1.11.3
@@ -630,6 +632,14 @@ packages:
       d3-selection: 3.0.0
       d3-zoom: 3.0.0
       vue: 3.4.15_typescript@5.0.4
+    dev: false
+
+  /@vue-flow/node-toolbar/1.1.0_@vue-flow+core@1.33.6:
+    resolution: {integrity: sha512-6RVDHgY+x8m1cXPaEkqPa/RMR90AC1hPHYBK/QVh8k6lJnFPgwJ9PSiYoC4amsUiDK0mF0Py+PlztLJY1ty+4A==}
+    peerDependencies:
+      '@vue-flow/core': ^1.12.2
+    dependencies:
+      '@vue-flow/core': 1.33.6_vue@3.4.15
     dev: false
 
   /@vue/compiler-core/3.4.15:

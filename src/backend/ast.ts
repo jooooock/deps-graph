@@ -57,14 +57,10 @@ export function findDeps(modules: Record<string, ModuleEntry>, id: string): Modu
         }
     })
 
-    return calls.nodes().map((_: CallExpression) => {
-        const depId: string = _.arguments[0].extra.raw
-        return modules[depId]
+    const depIds: string[] = calls.nodes().map((_: CallExpression) => {
+        return _.arguments[0].extra.raw as string
     })
-}
 
-// function handle(root) {
-//     const modules = parseModules(root)
-//     const deps = findDeps(modules, '64982')
-//     console.log(deps)
-// }
+    // 去重
+    return [...new Set(depIds)].map((depId: string) => modules[depId])
+}

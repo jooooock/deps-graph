@@ -16,6 +16,7 @@
     "@vue-flow/controls": "^1.1.1",
     "@vue-flow/core": "^1.33.6",
     "@vue-flow/minimap": "^1.4.0",
+    "@vue-flow/node-toolbar": "^1.1.0",
     "@vueuse/integrations": "^10.2.0",
     "bootstrap": "^5.3.0",
     "bootstrap-icons": "^1.10.5",
