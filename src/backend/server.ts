@@ -9,9 +9,6 @@ Deno.serve((req: Request) => {
     // api请求
     return routeApi(matchResult.pathname.input, req);
   } else {
-    for (const dirEntry of Deno.readDirSync('.')) {
-      console.log(dirEntry.name, dirEntry.isFile)
-    }
     // 静态页面请求
     return fs.serveDir(req, {
       fsRoot: "src/frontend/dist",
