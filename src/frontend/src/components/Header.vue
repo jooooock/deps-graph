@@ -2,6 +2,7 @@
 import {ref} from "vue";
 import {useModuleStore} from "@/stores/modules";
 import {ModuleEntry} from "@/types";
+import {baseURL} from "@/utils";
 
 let file = ref<File | null>(null)
 
@@ -20,7 +21,7 @@ function startParse() {
   formData.append('file', file.value!)
 
   loading.value = true
-  fetch('http://localhost:8000/api/modules/parse', {
+  fetch(`${baseURL}/api/modules/parse`, {
     method: 'post',
     body: formData,
   }).then(resp => resp.json()).then(resp => {

@@ -3,6 +3,7 @@ import {useModuleStore} from "@/stores/modules";
 import {useElementStore} from "@/stores/elements";
 import {ref, watch} from "vue";
 import {ModuleEntry} from "@/types";
+import {baseURL} from "@/utils";
 
 const moduleStore = useModuleStore()
 const elementStore = useElementStore()
@@ -14,7 +15,7 @@ watch(query, value => {
 
 
 function switchEntry(root: ModuleEntry) {
-  fetch(`http://localhost:8000/api/modules/deps?id=${root.id}&hash=${moduleStore.uuid}`).then(resp => resp.json()).then(resp => {
+  fetch(`${baseURL}/api/modules/deps?id=${root.id}&hash=${moduleStore.uuid}`).then(resp => resp.json()).then(resp => {
     const {code, data, message} = resp
     if (code === 0) {
       elementStore.init(root, data)

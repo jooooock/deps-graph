@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from "vue";
-import {proxyHost} from "@/utils/index";
+import {baseURL} from "@/utils";
 
 interface Deployment {
   id: string
@@ -11,7 +11,7 @@ interface Deployment {
 }
 
 const deployments = ref<Deployment[]>([])
-fetch(`${proxyHost}/api/deployments`).then(resp => resp.json()).then(data => {
+fetch(`${baseURL}/api/deployments`).then(resp => resp.json()).then(data => {
   deployments.value = data
 })
 const show = ref(false)

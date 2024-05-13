@@ -1,8 +1,8 @@
 import {defineStore} from "pinia";
-import {reactive, ref} from "vue";
+import {reactive} from "vue";
 import {ModuleEntry} from "@/types";
-import type {Element, Node, Edge} from '@vue-flow/core'
-import {sleep} from "@/utils/index";
+import type {Node, Edge} from '@vue-flow/core'
+import {baseURL, sleep} from "@/utils/index";
 import {useModuleStore} from "@/stores/modules";
 
 const GRID_SIZE = 20
@@ -101,7 +101,7 @@ export const useElementStore = defineStore('elements', () => {
         const rootId = data.id
         if (data.expand) {
             // 加载子节点
-            fetch(`http://localhost:8000/api/modules/deps?id=${data.id}&hash=${moduleStore.uuid}`).then(resp => resp.json()).then(resp => {
+            fetch(`${baseURL}/api/modules/deps?id=${data.id}&hash=${moduleStore.uuid}`).then(resp => resp.json()).then(resp => {
                 const {code, data, message} = resp
                 if (code === 0) {
                     const startX = rootNode!.position.x + -10 * GRID_SIZE * (Math.min(10, data.length) - 1) / 2

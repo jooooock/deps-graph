@@ -1,4 +1,4 @@
-export const proxyHost = import.meta.env.MODE === 'development' ? 'http://localhost:8000' : ''
+export const baseURL = import.meta.env.MODE === 'development' ? 'http://localhost:8000' : ''
 
 export function sleep(duration: number) {
     return new Promise(resolve => setTimeout(resolve, duration))
