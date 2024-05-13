@@ -11,7 +11,7 @@ Deno.serve((req: Request) => {
   } else {
     // 静态页面请求
     return fs.serveDir(req, {
-      fsRoot: "../frontend/dist",
+      fsRoot: "src/frontend/dist",
       quiet: false,
       showDirListing: true,
       showDotfiles: true,
